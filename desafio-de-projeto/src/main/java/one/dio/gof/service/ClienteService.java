@@ -11,6 +11,7 @@ public interface ClienteService {
 	
 	ClienteDTO inserir (Cliente cliente, NotificacaoEnum canal);
 	
-	void atualizar (Long id, Cliente cliente);
-	void deletar (Long id);
+	ClienteDTO atualizar (Long id, Cliente cliente, NotificacaoEnum canal);
+	
+	ClienteDTO deletar(Long id, NotificacaoEnum canal);
 }

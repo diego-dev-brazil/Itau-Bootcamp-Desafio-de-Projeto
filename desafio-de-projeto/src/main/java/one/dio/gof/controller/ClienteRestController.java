@@ -46,14 +46,14 @@ public class ClienteRestController {
 	}
 	
 	@PutMapping ("/{id}")
-	public ResponseEntity<Cliente> atualizar (@PathVariable Long id, @RequestBody Cliente cliente) {
-		clienteService.atualizar(id,cliente);
-		return ResponseEntity.ok(cliente);
+	public ResponseEntity<ClienteDTO> atualizar (@PathVariable Long id, @RequestBody Cliente cliente, @RequestParam NotificacaoEnum notificacao) {
+		ClienteDTO resposta = clienteService.atualizar(id,cliente, notificacao);
+		return ResponseEntity.ok(resposta);
 	}
 	 
 	@DeleteMapping ("/{id}")
-	public ResponseEntity<Cliente> deletar (@PathVariable Long id) {
-		clienteService.deletar(id);
-		return ResponseEntity.ok().build();
+	public ResponseEntity<ClienteDTO> deletar (@PathVariable Long id, @RequestParam NotificacaoEnum notificacao) {
+		ClienteDTO resposta = clienteService.deletar(id, notificacao);
+		return ResponseEntity.ok(resposta);
 	}
 }

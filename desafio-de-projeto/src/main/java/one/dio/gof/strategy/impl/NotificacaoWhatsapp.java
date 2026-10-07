@@ -17,11 +17,11 @@ public class NotificacaoWhatsapp implements NotificacaoStrategy{
 	@Override
 	public String enviar(Cliente cliente, String msg) {
 		StringBuilder sb = new StringBuilder();
-				sb.append("==== WHATSAPP MESSAGE ====")
+				sb.append("==== WHATSAPP MESSAGE ====\n")
 					.append("Cliente: " + cliente.getNome())
-					.append("Endereco: " + cliente.getEndereco().getLogradouro())
-					.append("CEP: " + cliente.getEndereco().getCep())
-					.append("Message: " + msg);
+					.append("\nEndereco: " + cliente.getEndereco().getLogradouro())
+					.append("\nCEP: " + cliente.getEndereco().getCep())
+					.append("\nMessage: " + msg);
 		return sb.toString();
 	}
 
